@@ -1,0 +1,12 @@
+services:
+  tf-toolkit-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tf-toolkit-local:latest
+    container_name: tf-toolkit-test
+    environment:
+      - TF_AUTO_APPLY=true
+    volumes:
+      - ./terraform:/terraform
+    working_dir: /terraform
